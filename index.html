@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phasmo Pro Coach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SETUP MODAL (LOBBY) -->
+    <div id="setup-modal" class="modal active">
+        <div class="modal-content">
+            <h2>Pre-Game Lobby</h2>eekly">Weekly Challenge</option>
+                    <option value="Nightmare">Nightmare / Insanity</option>
+                </select>
+            </div>
+            <button onclick="startInvestigation()" class="primary-btn">Enter Truck</button>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div id="main-app" class="main-app hidden">
+        
+        <!-- HEADER -->
+        <header id="app-header">
+            
+            <div class="form-group">
+                <label>Player Name:</label>
+                <input type="text" id="player-name" placeholder="Enter name..." value="Investigator">
+            </div>
+            <div class="form-group">
+                <label>Player Level:</label>
+                <input type="number" id="player-level" value="12" min="1" max="9999">
+            </div>
+            <div class="form-group">
+                <label>Map:</label>
+                <select id="map-select">
+                    <option value="6 Tanglewood Drive">6 Tanglewood Drive (Small)</option>
+                    <option value="Brownstone High School">Brownstone High School (Large)</option>
+                    <option value="Sunny Meadows Mental Institution">Sunny Meadows (Large)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Challenge/Difficulty:</label>
+                <select id="challenge-select">
+                    <option value="Normal">Normal / Professional</option>
+                    <option value="W<div class="header-logo">
+                <h1>Phasmo Pro Coach</h1>
+            </div>
+            <div class="header-info" id="header-info">
+                <!-- Populated by JS -->
+            </div>
+            <button onclick="location.reload()" class="danger-btn" style="width: auto; padding: 8px 15px;">End Run</button>
+        </header>
+
+        <main class="dashboard">
+            
+            <!-- LEFT COLUMN: JOURNAL & GHOSTS -->
+            <aside class="column left-col">
+                <div class="panel shadow-box">
+                    <h2>📖 Evidence Journal</h2>
+                    <div id="evidence-buttons" class="evidence-grid"></div>
+                    <button id="reset-btn" class="danger-btn" style="margin-top: 15px;">Reset Evidence</button>
+                </div>
+                
+                <div class="panel shadow-box" style="flex: 1; overflow-y: auto;">
+                    <h2>👻 Possible Ghosts (<span id="ghost-count">30</span>)</h2>
+                    <div id="ghost-list" class="ghost-list"></div>
+                </div>
+            </aside>
+
+            <!-- MIDDLE COLUMN: THE BRAIN -->
+            <section class="column middle-col">
+                <div class="panel shadow-box" style="flex: 1; display: flex; flex-direction: column;">
+                    <h2>🧠 Live Coach Feed</h2>
+                    <div id="coach-feed" class="coach-feed"></div>
+                    
+                    <div class="checklist-area">
+                        <h3>Field Checklist</h3>
+                        <div class="checkbox-grid">
+                            <label><input type="checkbox" id="chk-room"> Room Found</label>
+                            <label><input type="checkbox" id="chk-bone"> Bone Found</label>
+                            <label><input type="checkbox" id="chk-salt"> Salt Stepped In</label>
+                            <label><input type="checkbox" id="chk-breaker"> Breaker On</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT COLUMN: INTEL & LOADOUT -->
+            <aside class="column right-col">
+                <div class="panel shadow-box">
+                    <h2>📋 Board Intel</h2>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label>Ghost Gender:</label>
+                        <select id="gender-select" onchange="updateGender()">
+                            <option value="Unknown">Unknown</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <label style="color: #aaa; font-size: 14px; margin-bottom: 5px; display: block;">Objectives:</label>
+                    <select class="obj-select" id="obj1">
+                        <option value="None">Select Objective 1</option>
+                        <option value="Identify">Identify the Ghost</option>
+                        <option value="Escape">Escape a Hunt</option>
+                        <option value="Cleanse">Cleanse the Area</option>
+                        <option value="Photo">Capture Ghost Photo</option>
+                        <option value="Repel">Repel with Incense</option>
+                    </select>
+                    <select class="obj-select" id="obj2">
+                        <option value="None">Select Objective 2</option>
+                        <option value="Identify">Identify the Ghost</option>
+                        <option value="Escape">Escape a Hunt</option>
+                        <option value="Cleanse">Cleanse the Area</option>
+                        <option value="Photo">Capture Ghost Photo</option>
+                        <option value="Repel">Repel with Incense</option>
+                    </select>
+                    <select class="obj-select" id="obj3">
+                        <option value="None">Select Objective 3</option>
+                        <option value="Identify">Identify the Ghost</option>
+                        <option value="Escape">Escape a Hunt</option>
+                        <option value="Cleanse">Cleanse the Area</option>
+                        <option value="Photo">Capture Ghost Photo</option>
+                        <option value="Repel">Repel with Incense</option>
+                    </select>
+                </div>
+
+                <div class="panel shadow-box">
+                    <h2>🎒 Loadout Recommender</h2>
+                    <div id="loadout-tips" class="loadout-tips">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
