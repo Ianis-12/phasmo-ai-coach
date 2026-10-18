@@ -1,0 +1,697 @@
+{
+  "metadata": {
+    "game": "Phasmophobia",
+    "version": "2026 Season",
+    "lastUpdated": "2026-10-18",
+    "ghostCount": 30,
+    "sources": [
+      "GameRant Cheat Sheet (Jul 2026)",
+      "GameSpot Unique Abilities (Jul 2026)",
+      "Lawod Cheat Sheet (2026)",
+      "Phasmophobia Investigator"
+    ]
+  },
+  "ghosts": {
+    "Spirit": {
+      "evidence": ["EMF Level 5", "Spirit Box", "Ghost Writing"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": ["No unique strengths; only weakness is Incense."],
+      "behavioralTells": {
+        "incenseWeakness": "Incense prevents hunts for 180 seconds (3 minutes) instead of the standard 90 seconds."
+      },
+      "testingStrategies": [
+        "Time the gap between using Incense and the next hunt. If it is consistently ~180 seconds, it is a Spirit."
+      ]
+    },
+    "Wraith": {
+      "evidence": ["EMF Level 5", "Spirit Box", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Never steps in salt and leaves no UV footprints.",
+        "Can teleport to a random player outside of a hunt, leaving an EMF Level 2 or 5 reading at the destination."
+      ],
+      "behavioralTells": {
+        "saltImmunity": "Salt is completely undisturbed when the ghost passes through it.",
+        "teleportEMF": "Unexplained EMF readings far from the ghost room."
+      },
+      "testingStrategies": [
+        "Place salt in chokepoints. If the ghost passes through during an event or hunt but the salt is untouched, it is a Wraith."
+      ]
+    },
+    "Phantom": {
+      "evidence": ["Spirit Box", "Ultraviolet", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Taking a photo of it makes it disappear temporarily.",
+        "Drains sanity at 0.5%/s when a player is within 10m during a manifestation or hunt.",
+        "Blinks slower during hunts, staying invisible for longer periods."
+      ],
+      "behavioralTells": {
+        "photoDisappearance": "A photo taken during an event shows a clear image with no ghost and no static.",
+        "slowBlink": "During a hunt, the ghost is invisible for noticeably longer intervals."
+      },
+      "testingStrategies": [
+        "Take a photo of a ghost event. If the ghost vanishes instantly but the audio continues, and the journal photo has no ghost or static, it is a Phantom."
+      ]
+    },
+    "Poltergeist": {
+      "evidence": ["Spirit Box", "Ultraviolet", "Ghost Writing"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Can throw multiple objects at once in a 'Polty-bomb', draining 2% sanity per item thrown from all players in the room.",
+        "Throws an item every 0.5 seconds during a hunt (100% chance vs. normal 50%)."
+      ],
+      "behavioralTells": {
+        "multiThrow": "A pile of items explodes outward simultaneously, often draining a large chunk of sanity.",
+        "huntThrowing": "Objects are thrown at a rapid, consistent rate during hunts."
+      },
+      "testingStrategies": [
+        "Pile several items on a table. If they explode outward all at once rather than one by one, it is a Poltergeist."
+      ]
+    },
+    "Banshee": {
+      "evidence": ["Ultraviolet", "Ghost Orb", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "target", "value": 50, "note": "Based on the individual sanity of its target, not team average." },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Targets only one player at a time and ignores all others during hunts until the target dies or leaves.",
+        "Can only be female (check ghost name in van or manifested model).",
+        "Has a 33% chance to produce a unique scream through the Parabolic Microphone or Sound Recorder.",
+        "Higher chance to perform singing ghost events, draining 15% sanity if it touches its target."
+      ],
+      "behavioralTells": {
+        "singleTarget": "During a hunt, it walks directly past non-target players to reach its target.",
+        "scream": "A distinct, high-pitched wail on the Parabolic Mic."
+      },
+      "testingStrategies": [
+        "Have a non-target player stand directly in the ghost's path during a hunt. If the ghost ignores them and continues toward the target, it is a Banshee."
+      ]
+    },
+    "Jinn": {
+      "evidence": ["EMF Level 5", "Ultraviolet", "Freezing Temperatures"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": {
+        "type": "conditional",
+        "baseMPS": 1.7,
+        "boostMPS": 2.5,
+        "condition": "Fuse box is ON, has line-of-sight, and is more than 3m from the target.",
+        "losAcceleration": "standard"
+      },
+      "uniqueAbilities": [
+        "Cannot turn off the fuse box directly.",
+        "With the fuse box ON, can drain 25% sanity from a nearby player (within 3m or same room), leaving an EMF Level 2 or 5 reading at the fuse box."
+      ],
+      "behavioralTells": {
+        "breakerLock": "The fuse box is never turned off by the ghost.",
+        "speedDrop": "It moves very fast down a hallway but slows abruptly when within 3m of you.",
+        "breakerEMF": "An EMF reading at the fuse box with no visible interaction."
+      },
+      "testingStrategies": [
+        "Turn the breaker ON. If the ghost zooms toward you from a distance but abruptly slows when close, it is a Jinn."
+      ]
+    },
+    "Mare": {
+      "evidence": ["Spirit Box", "Ghost Orb", "Ghost Writing"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "conditional",
+        "value": 60,
+        "condition": "Lights are OFF in its current room (60%). If lights are ON, threshold is 40%."
+      },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Cannot turn lights ON, only off.",
+        "Has a high chance to instantly turn off a light a player turns on within 4m of it.",
+        "Prefers to shatter lights during ghost events."
+      ],
+      "behavioralTells": {
+        "lightOff": "It will never turn a light switch on. If it does, rule out Mare.",
+        "instantOff": "A light you just turned on flicks off within one second."
+      },
+      "testingStrategies": [
+        "Turn on a light in its room. If it instantly turns it off, it is highly likely a Mare. If it ever turns a light ON, rule out Mare."
+      ]
+    },
+    "Revenant": {
+      "evidence": ["Ghost Orb", "Ghost Writing", "Freezing Temperatures"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": {
+        "type": "conditional",
+        "searchMPS": 1.0,
+        "chaseMPS": 3.0,
+        "condition": "Moves at 1.0 m/s while roaming. Once it detects a player (LOS, sound, or electronics), it sprints at 3.0 m/s until it reaches the detection point.",
+        "losAcceleration": "none (fixed speeds)"
+      },
+      "uniqueAbilities": ["Extreme speed contrast between searching and chasing."],
+      "behavioralTells": {
+        "slowRoam": "Footsteps are painfully slow and dragging when it has not detected anyone.",
+        "suddenSprint": "The moment it detects a player, it breaks into a very fast sprint."
+      },
+      "testingStrategies": [
+        "Listen to footsteps. If they are extremely slow, then suddenly break into a sprint when it sees someone, it is a Revenant."
+      ]
+    },
+    "Shade": {
+      "evidence": ["EMF Level 5", "Ghost Writing", "Freezing Temperatures"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 35 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Will not hunt if a player is in the same room.",
+        "Cannot perform successful interactions or ghost events in the same room as a player.",
+        "Cannot levitate objects.",
+        "Prefers 'mist' or shadowy ghost events over full physical manifestations."
+      ],
+      "behavioralTells": {
+        "shyness": "The ghost is completely silent and inactive while you are in its room, but active when you leave.",
+        "noLevitation": "Objects are never levitated."
+      },
+      "testingStrategies": [
+        "Stand in the ghost room at 0% sanity. If it refuses to hunt until you step out into the hallway, it is a Shade."
+      ]
+    },
+    "Demon": {
+      "evidence": ["Ultraviolet", "Ghost Writing", "Freezing Temperatures"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "conditional",
+        "normalValue": 70,
+        "abilityValue": 100,
+        "note": "Can use its ability to hunt at any sanity level."
+      },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Can initiate a hunt at any sanity level via its ability.",
+        "Hunt cooldown is 20 seconds (instead of 25).",
+        "Incense prevents hunts for only 60 seconds (instead of 90).",
+        "Crucifix effectiveness range is increased by 50% per tier (4.5m / 6m / 7.5m)."
+      ],
+      "behavioralTells": {
+        "earlyHunt": "A hunt at very high sanity (above 70%) is a strong Demon tell.",
+        "fastCooldown": "Hunts can occur in very quick succession."
+      },
+      "testingStrategies": [
+        "If you are hunted within the first 1–2 minutes at high sanity (above 70%), it is very likely a Demon."
+      ]
+    },
+    "Yurei": {
+      "evidence": ["Ghost Orb", "Freezing Temperatures", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Can slam a door completely shut, draining 15% sanity from all players within 7.5m and creating an EMF Level 2 reading.",
+        "Is the only ghost that can move the front exit door outside of a hunt or event.",
+        "Using Incense on it forces it to stay in its room for 90 seconds."
+      ],
+      "behavioralTells": {
+        "doorSlam": "A door closes fully on its own, accompanied by a sanity drain.",
+        "frontDoor": "The main exit door clicks or moves without a hunt or event."
+      },
+      "testingStrategies": [
+        "If the main entrance door suddenly closes or clicks while you are exploring (not during a hunt or event), it is a Yurei."
+      ]
+    },
+    "Oni": {
+      "evidence": ["EMF Level 5", "Freezing Temperatures", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Very active when players are nearby.",
+        "Cannot perform the 'airball' (hissing mist) ghost event.",
+        "Drains double sanity (20%) if it collides with a player during a ghost event.",
+        "Blinks very rapidly during hunts, appearing in its full physical form more often."
+      ],
+      "behavioralTells": {
+        "noAirball": "If the ghost performs a transparent hissing mist event, rule out Oni.",
+        "highVisibility": "During a hunt, the ghost is almost always visible."
+      },
+      "testingStrategies": [
+        "If it does the transparent airball hissing event at you, you can instantly rule out Oni."
+      ]
+    },
+    "Yokai": {
+      "evidence": ["Spirit Box", "Ghost Orb", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "conditional",
+        "value": 50,
+        "voiceValue": 80,
+        "condition": "Rises to 80% if a player is using voice chat in the same room."
+      },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "During a hunt, it is deaf and can only detect electronics or voice chat within 2.5m."
+      ],
+      "behavioralTells": {
+        "deafness": "During a hunt, you can move freely as long as you are silent and not within 2.5m.",
+        "voiceTrigger": "Talking near it can trigger an early hunt."
+      },
+      "testingStrategies": [
+        "Yell at it during a hunt from 4 meters away with your flashlight on. If it completely ignores you and wanders away, it is a Yokai."
+      ]
+    },
+    "Hantu": {
+      "evidence": ["Ultraviolet", "Ghost Orb", "Freezing Temperatures"],
+      "guaranteedEvidence": "Freezing Temperatures",
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": {
+        "type": "conditional",
+        "coldMPS": 2.7,
+        "warmMPS": 1.4,
+        "condition": "Speed scales with room temperature. Below 0°C = 2.7 m/s; above 15°C = 1.4 m/s.",
+        "losAcceleration": "none (temperature-based only)"
+      },
+      "uniqueAbilities": [
+        "Cannot turn on the fuse box and is more likely to turn it off.",
+        "During a hunt, if the fuse box is off, freezing breath is visible near its head."
+      ],
+      "behavioralTells": {
+        "breath": "Visible freezing breath during a hunt when the breaker is off.",
+        "breakerOff": "The fuse box is frequently turned off."
+      },
+      "testingStrategies": [
+        "Turn the breaker ON. If it sprints in its freezing room but slows to a crawl in a warm hallway, it is a Hantu."
+      ]
+    },
+    "Goryo": {
+      "evidence": ["EMF Level 5", "Ultraviolet", "D.O.T.S. Projector"],
+      "guaranteedEvidence": "D.O.T.S. Projector",
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Its D.O.T.S. form is only visible through a video camera, and only when no players are in the same room.",
+        "Cannot change its favorite room and rarely roams far from it."
+      ],
+      "behavioralTells": {
+        "cameraOnlyDOTS": "D.O.T.S. evidence appears on the van's video feed but not to a player standing in the room.",
+        "stationary": "The ghost stays in or very near its favorite room."
+      },
+      "testingStrategies": [
+        "Set up a video camera and watch D.O.T.S. from the van. If you see it on camera but your friend in the room cannot see it, it is a Goryo."
+      ]
+    },
+    "Myling": {
+      "evidence": ["EMF Level 5", "Ultraviolet", "Ghost Writing"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Footsteps and vocal sounds during a hunt are only audible within 12m (instead of the standard 20m).",
+        "Produces paranormal sounds more frequently on the Parabolic Microphone."
+      ],
+      "behavioralTells": {
+        "quietHunt": "A hunt sounds unusually silent until the ghost is very close.",
+        "paramic": "Frequent unexplained sounds on the Parabolic Mic."
+      },
+      "testingStrategies": [
+        "Hide with your flashlight on the floor. If the flashlight starts glitching BEFORE you can hear the ghost's footsteps, it is a Myling."
+      ]
+    },
+    "Onryo": {
+      "evidence": ["Spirit Box", "Ghost Orb", "Freezing Temperatures"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "conditional",
+        "normalValue": 60,
+        "flameValue": 40,
+        "blowoutValue": 100,
+        "note": "60% normally, 40% when within 4m of a flame, and 100% after blowing out three flames with no other flames nearby."
+      },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Lit flames act as crucifixes. If it tries to hunt near a flame, it blows it out instead.",
+        "Can hunt at any sanity level after blowing out three flames."
+      ],
+      "behavioralTells": {
+        "candleCrucifix": "A lit candle prevents a hunt by blowing out instead.",
+        "blowoutHunt": "After extinguishing three candles, a hunt begins regardless of sanity."
+      },
+      "testingStrategies": [
+        "Place a lit candle on top of a crucifix. If the crucifix burns before the candle blows out, rule out Onryo."
+      ]
+    },
+    "The Twins": {
+      "evidence": ["EMF Level 5", "Spirit Box", "Freezing Temperatures"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": {
+        "type": "conditional",
+        "mainMPS": 1.53,
+        "decoyMPS": 1.87,
+        "note": "Main twin is 10% slower (1.53 m/s); Decoy twin is 10% faster (1.87 m/s)."
+      },
+      "uniqueAbilities": [
+        "Can perform interactions in two different locations at the exact same time.",
+        "A hunt can begin from the location of its last long-range interaction."
+      ],
+      "behavioralTells": {
+        "doubleInteraction": "Two EMF readings or interactions occur simultaneously in different rooms.",
+        "kinkedActivity": "The activity monitor line changes direction halfway up (a 'kinked' line)."
+      },
+      "testingStrategies": [
+        "Look at the activity monitor in the truck. If you see a line that changes direction halfway up, it indicates The Twins."
+      ]
+    },
+    "Raiju": {
+      "evidence": ["EMF Level 5", "Ghost Orb", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "conditional",
+        "normalValue": 50,
+        "electronicValue": 65,
+        "condition": "Rises to 65% when within range of active electronic equipment (6m small maps, 8m medium, 10m large)."
+      },
+      "speed": {
+        "type": "conditional",
+        "baseMPS": 1.7,
+        "boostMPS": 2.5,
+        "condition": "Speeds up to 2.5 m/s when near active electronic equipment.",
+        "losAcceleration": "standard"
+      },
+      "uniqueAbilities": [
+        "Interferes with electronics from 15m away (instead of the standard 10m)."
+      ],
+      "behavioralTells": {
+        "electronicSpeed": "The ghost zooms only while running past active electronics.",
+        "glitchRange": "Electronics glitch from unusually far away."
+      },
+      "testingStrategies": [
+        "Leave a line of active DOTS and EMFs in a hallway. If it zooms at lightning speed only while running past the equipment, it is a Raiju."
+      ]
+    },
+    "Obake": {
+      "evidence": ["EMF Level 5", "Ultraviolet", "Ghost Orb"],
+      "guaranteedEvidence": "Ultraviolet",
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": { "type": "static", "baseMPS": 1.7, "losAcceleration": "standard" },
+      "uniqueAbilities": [
+        "Has a 16.6% chance to leave a six-fingered handprint or a two-finger lightswitch print.",
+        "Has a 25% chance to leave no UV evidence at all.",
+        "Fingerprints disappear twice as fast as normal.",
+        "Shapeshifts into a different ghost model for a split second while blinking at least once per hunt."
+      ],
+      "behavioralTells": {
+        "sixFinger": "A six-fingered handprint is a guaranteed tell.",
+        "shapeshift": "During a hunt, its model briefly changes to a different ghost."
+      },
+      "testingStrategies": [
+        "Watch it during a hunt. If it is a tall man but blinks into a crawling child for a microsecond and turns back, it is an Obake."
+      ]
+    },
+    "The Mimic": {
+      "evidence": ["Spirit Box", "Ultraviolet", "Freezing Temperatures"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": "Ghost Orb",
+      "huntSanityThreshold": { "type": "mimic", "note": "Copies the threshold of the ghost it is currently mimicking." },
+      "speed": { "type": "mimic", "note": "Copies the speed and abilities of the ghost it is currently mimicking." },
+      "uniqueAbilities": [
+        "Mimics any ghost, including their abilities, speed, and hunt thresholds.",
+        "Can change the ghost it is mimicking every 30–120 seconds.",
+        "Always produces Ghost Orbs as a fourth, fake piece of evidence, even on zero-evidence contracts."
+      ],
+      "behavioralTells": {
+        "fakeOrb": "Ghost Orbs appear on a contract where they are not one of the three evidence types.",
+        "inconsistentBehavior": "The ghost's speed and abilities seem to change mid-contract."
+      },
+      "testingStrategies": [
+        "If you find Ghost Orbs on a 0-evidence difficulty run, it is 100% a Mimic."
+      ]
+    },
+    "Moroi": {
+      "evidence": ["Spirit Box", "Ghost Writing", "Freezing Temperatures"],
+      "guaranteedEvidence": "Spirit Box",
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": {
+        "type": "conditional",
+        "minMPS": 1.5,
+        "maxMPS": 2.25,
+        "condition": "Speed increases as average sanity drops below the hunt threshold. Maximum speed is reached at 0% sanity.",
+        "losAcceleration": "standard"
+      },
+      "uniqueAbilities": [
+        "Can curse players through a successful Spirit Box response, Parabolic Microphone, or Sound Recorder. The curse doubles passive sanity drain and prevents light from slowing it. Sanity medication removes it.",
+        "Incense blinds it for 7 seconds instead of the standard 5."
+      ],
+      "behavioralTells": {
+        "curse": "Sanity continues to drain rapidly even in a lit room after a Spirit Box response.",
+        "sanitySpeed": "The ghost becomes noticeably faster as the team's sanity drops."
+      },
+      "testingStrategies": [
+        "Use the Spirit Box and get a response. Then stand in the light. If your sanity is still plummeting, you are cursed by a Moroi."
+      ]
+    },
+    "Deogen": {
+      "evidence": ["Spirit Box", "Ghost Writing", "D.O.T.S. Projector"],
+      "guaranteedEvidence": "Spirit Box",
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 40 },
+      "speed": {
+        "type": "conditional",
+        "farMPS": 3.0,
+        "nearMPS": 0.4,
+        "condition": "Moves at 3.0 m/s when far from its target and slows to as low as 0.4 m/s when within 6m.",
+        "losAcceleration": "none (distance-based only)"
+      },
+      "uniqueAbilities": [
+        "Has constant line-of-sight on all players during a hunt; hiding is impossible.",
+        "Has a 33% chance to produce unique heavy breathing through the Spirit Box when a player is within 1m."
+      ],
+      "behavioralTells": {
+        "wallhacks": "It always knows exactly where you are and walks directly to you.",
+        "speedDrop": "It sprints at you at extreme speed but slows to a crawl right before reaching you.",
+        "heavyBreathing": "Unique heavy breathing on the Spirit Box."
+      },
+      "testingStrategies": [
+        "Do NOT hide. Stand in an open room. If it sprints at you at mach speed but slows to a snail's pace right before hitting you, it is a Deogen. Loop it around a table."
+      ]
+    },
+    "Thaye": {
+      "evidence": ["Ghost Orb", "Ghost Writing", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "aging",
+        "initialValue": 75,
+        "finalValue": 15,
+        "note": "Starts at 75% and decreases as the ghost ages. At Age 10+, it is 15%."
+      },
+      "speed": {
+        "type": "aging",
+        "initialMPS": 2.75,
+        "finalMPS": 1.0,
+        "note": "Starts at 2.75 m/s and slows to 1.0 m/s as it ages.",
+        "losAcceleration": "none (age-based only)"
+      },
+      "uniqueAbilities": [
+        "Ages over time when players are in the same room or within 3m. As it ages, it becomes slower, less active, and its hunt threshold drops."
+      ],
+      "behavioralTells": {
+        "aging": "The ghost is extremely aggressive and fast early on, then becomes progressively weaker and more passive."
+      },
+      "testingStrategies": [
+        "Ask the Ouija Board 'How old are you?' early on, then ask again 10 minutes later. If the age went up, it is a Thaye."
+      ]
+    },
+    "Aswang": {
+      "evidence": ["Freezing Temperatures", "Ghost Writing", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": {
+        "type": "conditional",
+        "baseMPS": 1.53,
+        "maxMPS": 2.53,
+        "accelerationRate": "0.075x base speed per second",
+        "condition": "Slower base speed (1.53 m/s) but accelerates faster during line-of-sight, reaching max speed in ~8.67 seconds.",
+        "losAcceleration": "fast"
+      },
+      "uniqueAbilities": [
+        "Its hunt immediately ends if it detects and reaches a player hiding in an official hiding spot. However, on its next hunt, it moves directly to that spot and begins with no grace period."
+      ],
+      "behavioralTells": {
+        "hidingSpotEnd": "A hunt ends abruptly the moment it reaches your hiding spot.",
+        "fastAcceleration": "The ghost catches up to you in a straight line much faster than a normal ghost."
+      },
+      "testingStrategies": [
+        "Do not re-enter a hiding spot after it has found you there. If a hunt ended the moment it reached your hiding spot, it is an Aswang."
+      ]
+    },
+    "Dayan": {
+      "evidence": ["EMF Level 5", "Ghost Orb", "Spirit Box"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "conditional",
+        "movingValue": 65,
+        "stillValue": 45,
+        "idleValue": 50,
+        "condition": "65% if a nearby player (within 10m) is moving, 45% if they are still, and 50% if no one is within 10m."
+      },
+      "speed": {
+        "type": "conditional",
+        "movingMPS": 2.25,
+        "stillMPS": 1.2,
+        "condition": "Speed is tied to nearby player movement within 10m. 2.25 m/s when a player is moving; 1.2 m/s when a player is still.",
+        "losAcceleration": "standard (effect only applies outside 10m)"
+      },
+      "uniqueAbilities": [
+        "Can only be female (name and model).",
+        "Its speed and hunt threshold are directly affected by the movement of players within a 10m radius, even through floors."
+      ],
+      "behavioralTells": {
+        "movementSpeed": "The ghost speeds up when you run and slows down when you stand still.",
+        "stillnessSafe": "Standing completely still makes the ghost much slower and less likely to hunt."
+      },
+      "testingStrategies": [
+        "When you suspect a Dayan, stand completely still during a hunt to slow it down. If the ghost is fast when you move and slow when you stop, it is a Dayan."
+      ]
+    },
+    "Deildegast": {
+      "evidence": ["EMF Level 5", "Ghost Writing", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": { "type": "static", "value": 50 },
+      "speed": {
+        "type": "conditional",
+        "startMPS": 3.0,
+        "minMPS": 0.4,
+        "reductionPerObject": 0.1,
+        "condition": "Starts at 3.0 m/s but decreases by 0.1 m/s for every unique object a player interacts with before a hunt. Minimum speed is 0.4 m/s (reached after 26 objects). Speed resets after each hunt or after burning a crucifix.",
+        "losAcceleration": "none"
+      },
+      "uniqueAbilities": [
+        "Has a reduced chance to interact with doors and light switches (10% vs. standard 25%)."
+      ],
+      "behavioralTells": {
+        "speedChange": "The ghost's hunt speed is noticeably slower if players have been interacting with many objects.",
+        "doorRare": "Doors and light switches are interacted with less often."
+      },
+      "testingStrategies": [
+        "If a hunt starts at extreme speed (3.0 m/s) but subsequent hunts are slower after you have intentionally interacted with many objects, it is a Deildegast."
+      ]
+    },
+    "Gallu": {
+      "evidence": ["EMF Level 5", "Ultraviolet", "Spirit Box"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "state",
+        "normalValue": 50,
+        "enragedValue": 60,
+        "weakenedValue": 40
+      },
+      "speed": {
+        "type": "state",
+        "normalMPS": 1.7,
+        "enragedMPS": 1.96,
+        "weakenedMPS": 1.36,
+        "losAcceleration": "standard"
+      },
+      "uniqueAbilities": [
+        "Cycles through three states: Normal, Enraged, and Weakened.",
+        "Becomes Enraged after burning a crucifix, being blinded by Incense, or stepping in salt. Becomes Weakened if a hunt ends while it is Enraged.",
+        "In its Enraged state, it does not leave footprints in salt."
+      ],
+      "behavioralTells": {
+        "stateChange": "The ghost's speed and aggression change noticeably after using protective equipment.",
+        "saltNoPrint": "Salt is disturbed but no UV footprint is left (Enraged state)."
+      },
+      "testingStrategies": [
+        "Use Incense or a crucifix and observe if the ghost's speed and hunt threshold increase (Enraged). If it then becomes slower after a hunt ends, it is a Gallu."
+      ]
+    },
+    "Kormos": {
+      "evidence": ["Ghost Orb", "Spirit Box", "Ultraviolet"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "conditional",
+        "value": 50,
+        "sprintValue": 70,
+        "condition": "Rises to 70% if a nearby player is sprinting."
+      },
+      "speed": {
+        "type": "conditional",
+        "baseMPS": 1.7,
+        "detectedMPS": 2.21,
+        "topMPS": 3.65,
+        "condition": "Base speed 1.7 m/s. Speeds up to 2.21 m/s when it detects a sound, and can reach a top speed of 3.65 m/s. Detection ranges: sprinting 30m, walking 15m, crouching 10m.",
+        "losAcceleration": "none (sound-based)"
+      },
+      "uniqueAbilities": [
+        "Is completely blind and hunts purely based on sound.",
+        "Prioritizes the loudest sound (sprinting > walking > crouching).",
+        "Cannot perform mist or ghost chase events."
+      ],
+      "behavioralTells": {
+        "blindness": "You can walk or crouch-walk right past it without being detected if you are quiet.",
+        "soundPriority": "It always moves toward the loudest noise."
+      },
+      "testingStrategies": [
+        "Never sprint if you suspect a Kormos. If you can walk or crouch-walk directly past it without being detected, it is a Kormos."
+      ]
+    },
+    "Obambo": {
+      "evidence": ["Ghost Writing", "Ultraviolet", "D.O.T.S. Projector"],
+      "guaranteedEvidence": null,
+      "fakeEvidence": null,
+      "huntSanityThreshold": {
+        "type": "state",
+        "calmValue": 10,
+        "aggressiveValue": 65,
+        "note": "Starts Calm. Becomes Aggressive one minute after the exit door is first opened, then alternates every two minutes."
+      },
+      "speed": {
+        "type": "state",
+        "calmMPS": 1.445,
+        "aggressiveMPS": 1.955,
+        "note": "Calm state is slow but highly active. Aggressive state is fast, but hunts are 20% shorter."
+      },
+      "uniqueAbilities": [
+        "Cycles between Calm and Aggressive states on a timer.",
+        "Activity level is much higher in its Calm state and lower in its Aggressive state."
+      ],
+      "behavioralTells": {
+        "stateCycle": "The ghost's activity level and hunt speed change on a predictable timer.",
+        "calmActivity": "High interaction rate while the ghost is slow (Calm)."
+      },
+      "testingStrategies": [
+        "Time the state changes from the moment the exit door is opened. A Calm Obambo is very safe (10% hunt threshold) but highly active. An Aggressive Obambo is fast but its hunts are shorter."
+      ]
+    }
+  }
+}

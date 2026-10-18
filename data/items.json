@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "game": "Phasmophobia",
+    "version": "2026 Season",
+    "lastUpdated": "2026-10-18",
+    "equipmentCategories": ["Evidence", "Defensive", "Utility", "Consumable"]
+  },
+  "equipment": {
+    "evidenceTools": {
+      "D.O.T.S. Projector": {
+        "price": 65,
+        "maxLoadout": 2,
+        "electronic": true,
+        "placeable": true,
+        "tiers": {
+          "Tier1": { "unlockLevel": "N/A", "range": "5m", "spotlight": "Narrow" },
+          "Tier2": { "unlockLevel": 27, "range": "2.5m", "spotlight": "Area light" },
+          "Tier3": { "unlockLevel": 49, "range": "7m", "spotlight": "Wide", "scanning": true }
+        },
+        "strategyNotes": "Tier 3's wide scanning spotlight is significantly more effective for covering large rooms like the Brownstone High School gym."
+      },
+      "EMF Reader": {
+        "price": 45,
+        "maxLoadout": 2,
+        "electronic": true,
+        "tiers": {
+          "Tier1": { "notes": "Basic detection. Requires proximity." },
+          "Tier2": { "notes": "Improved reliability and range." },
+          "Tier3": { "notes": "Maximum range and instant response. Best for quick evidence gathering." }
+        },
+        "strategyNotes": "Place an EMF reader near the fuse box to catch a Jinn's sanity-draining ability, which leaves a reading."
+      },
+      "Spirit Box": {
+        "price": 50,
+        "maxLoadout": 2,
+        "electronic": true,
+        "tiers": {
+          "Tier1": { "unlockLevel": "N/A", "notes": "Basic. Requires ghost to be in the same room." },
+          "Tier2": { "notes": "Improved response range." },
+          "Tier3": { "notes": "Best response range and clarity." }
+        },
+        "strategyNotes": "Always ask questions in a lit room to preserve sanity. A successful response from a Moroi can curse you, doubling passive sanity drain."
+      },
+      "Ghost Writing Book": {
+        "price": 35,
+        "maxLoadout": 2,
+        "tiers": {
+          "Tier1": { "range": "3m", "interactionRate": "Low" },
+          "Tier2": { "range": "4m", "interactionRate": "Medium" },
+          "Tier3": { "range": "5m", "interactionRate": "High" }
+        },
+        "strategyNotes": "Higher tiers are crucial for large maps, as the ghost must be within the book's range to interact."
+      },
+      "Video Camera": {
+        "price": 50,
+        "maxLoadout": 2,
+        "electronic": true,
+        "tiers": {
+          "Tier1": { "notes": "Basic video feed." },
+          "Tier2": { "notes": "Improved resolution." },
+          "Tier3": { "notes": "Best resolution and night vision." }
+        },
+        "strategyNotes": "Essential for catching a Goryo's D.O.T.S. evidence, which is only visible through a camera feed. Can also be placed on a Tripod."
+      },
+      "UV Light": {
+        "price": 35,
+        "maxLoadout": 2,
+        "tiers": {
+          "Tier1": { "notes": "Basic UV detection. Narrow beam." },
+          "Tier2": { "notes": "Wider beam." },
+          "Tier3": { "notes": "Maximum range and brightness." }
+        },
+        "strategyNotes": "Check for a six-fingered handprint to instantly identify an Obake. Fingerprints fade twice as fast for this ghost."
+      },
+      "Thermometer": {
+        "price": 30,
+        "maxLoadout": 2,
+        "tiers": {
+          "Tier1": { "notes": "Basic temperature reading. Slower response." },
+          "Tier2": { "notes": "Faster and more accurate." },
+          "Tier3": { "notes": "Instant and most precise. Essential for finding the ghost room quickly." }
+        },
+        "strategyNotes": "A Hantu's speed is directly tied to temperature; keeping the fuse box on and the location warm can significantly slow it down."
+      }
+    },
+    "defensiveEquipment": {
+      "Crucifix": {
+        "price": 30,
+        "maxLoadout": 2,
+        "charges": 2,
+        "tiers": {
+          "Tier1": { "name": "Small Wooden Crucifix", "range": "3m", "notes": "Basic protection." },
+          "Tier2": { "name": "Larger Crucifix", "range": "4m", "notes": "Increased radius." },
+          "Tier3": { "name": "Powerful Ornate Crucifix", "range": "5m", "notes": "Extended range. Best defensive coverage." }
+        },
+        "strategyNotes": "Crucifixes only prevent a hunt from starting; they do not stop an active hunt. A Demon's crucifix range is 50% larger than a standard ghost's."
+      },
+      "Smudge Sticks (Incense)": {
+        "price": 15,
+        "maxLoadout": 4,
+        "requires": "Lighter",
+        "tiers": {
+          "Tier1": { "range": "3m", "effect": "Blinds ghost for 5s during a hunt." },
+          "Tier2": { "range": "4m", "effect": "Blinds ghost for 6s during a hunt." },
+          "Tier3": { "range": "5m", "effect": "Stops ghost movement for 5s during a hunt." }
+        },
+        "strategyNotes": "Use during a hunt to break line-of-sight and escape. A Spirit's smudge timer is 180 seconds (double the normal 90), while a Demon's is only 60 seconds."
+      },
+      "Lighter (Igniter)": {
+        "price": 15,
+        "maxLoadout": 2,
+        "tiers": {
+          "Tier1": { "name": "Basic Lighter", "notes": "Standard functionality." },
+          "Tier2": { "name": "Zippo-style Lighter", "notes": "More reliable." },
+          "Tier3": { "name": "Reliable Torch", "notes": "Most consistent and fastest ignition." }
+        },
+        "strategyNotes": "Required to light Smudge Sticks and Candles."
+      }
+    },
+    "utilityEquipment": {
+      "Flashlight": {
+        "price": 30,
+        "maxLoadout": 4,
+        "electronic": true,
+        "tiers": {
+          "Tier1": { "unlockLevel": "N/A", "intensity": "Low", "spotlight": "Narrow" },
+          "Tier2": { "unlockLevel": 18, "intensity": "Medium", "spotlight": "Narrow" },
+          "Tier3": { "unlockLevel": 34, "intensity": "High", "spotlight": "Wide" }
+        },
+        "strategyNotes": "An active flashlight can be detected by a Yokai during a hunt. A Raiju also speeds up when near active electronics."
+      },
+      "Head Gear": {
+        "price": 60,
+        "maxLoadout": 4,
+        "tiers": {
+          "Tier1": { "notes": "Camera for Ghost Orbs." },
+          "Tier2": { "notes": "Weak flashlight." },
+          "Tier3": { "notes": "Night-vision goggles. Best for visibility." }
+        },
+        "strategyNotes": "Frees up a hand slot, allowing you to carry two items while maintaining light."
+      },
+      "Parabolic Microphone": {
+        "price": 50,
+        "maxLoadout": 2,
+        "electronic": true,
+        "notes": "Detects paranormal sounds from a distance. Can catch the Banshee's unique scream and a Moroi's curse.",
+        "strategyNotes": "Use to locate the ghost room on large maps. A Banshee's scream or a Moroi's curse can be heard through this device."
+      },
+      "Sound Recorder": {
+        "price": "Varies",
+        "maxLoadout": 1,
+        "notes": "Records and plays back paranormal sounds. Can catch the Banshee's scream.",
+        "strategyNotes": "A specialized tool for confirming a Banshee."
+      },
+      "Motion Sensor": {
+        "price": 100,
+        "maxLoadout": 4,
+        "electronic": true,
+        "tiers": {
+          "Tier1": { "notes": "Wall-mounted. Detects players and ghosts. Map shows a line." },
+          "Tier2": { "notes": "Wall-mounted. Map shows a cone. Audible alert." },
+          "Tier3": { "notes": "Floor-mountable. Detects only ghosts. Map shows a circle." }
+        },
+        "strategyNotes": "Tier 3 sensors are invaluable for tracking a ghost's roaming path without false alarms from players."
+      },
+      "Tripod": {
+        "price": 25,
+        "maxLoadout": 4,
+        "tiers": {
+          "Tier1": { "notes": "Low stability." },
+          "Tier2": { "notes": "Medium stability. Rotatable." },
+          "Tier3": { "notes": "High stability. Rotatable." }
+        },
+        "strategyNotes": "Allows you to place a Video Camera for remote monitoring, freeing up a hand slot."
+      }
+    },
+    "consumables": {
+      "Sanity Pills": {
+        "price": 20,
+        "maxLoadout": 4,
+        "unlockLevel": 5,
+        "effect": "Restores sanity based on difficulty: Beginner (40%), Intermediate (35%), Professional (30%), Nightmare (25%).",
+        "tiers": {
+          "Tier1": { "notes": "20-second consumption time." },
+          "Tier2": { "notes": "10-second consumption time." },
+          "Tier3": { "notes": "10-second consumption time. Instantly refills stamina and maintains it for 10 seconds." }
+        },
+        "strategyNotes": "Removes a Moroi's curse. Tier 3 pills are a lifesaver during a chase."
+      },
+      "Salt": {
+        "price": 15,
+        "maxLoadout": 3,
+        "tiers": {
+          "Tier1": { "uses": 2, "notes": "Circular pattern." },
+          "Tier2": { "uses": 3, "notes": "Horizontal line pattern." },
+          "Tier3": { "uses": 3, "notes": "Wider horizontal line pattern." }
+        },
+        "effect": "Ghosts that step in salt leave UV footprints and are slowed during a hunt. Can force the ghost to cancel an ability.",
+        "strategyNotes": "The Wraith never steps in salt. Place salt at chokepoints to confirm a Wraith or to leave a trail for a Revenant."
+      },
+      "Candle": {
+        "price": 15,
+        "maxLoadout": 4,
+        "effect": "Provides a small light source. Within 2m, it slows sanity drain. Acts as a crucifix against the Onryo.",
+        "tiers": {
+          "Tier1": { "duration": "5 minutes", "sanityDrainReduction": "33%" },
+          "Tier2": { "duration": "10 minutes", "sanityDrainReduction": "50%" },
+          "Tier3": { "duration": "Unlimited", "sanityDrainReduction": "66%", "notes": "Waterproof." }
+        },
+        "strategyNotes": "A lit candle will be blown out by an Onryo instead of allowing a hunt. Three blowouts with no other flames nearby can trigger a hunt at any sanity level."
+      }
+    }
+  },
+  "cursedPossessions": {
+    "commonRules": {
+      "spawnChance": "1 in 7 per contract on default difficulties.",
+      "setupPhase": "Using any cursed possession immediately cancels the setup phase.",
+      "inventory": "Cannot be stored. Requires a free hand.",
+      "photographValue": "Up to $7 and 7 XP per photograph.",
+      "cursedHunt": {
+        "description": "A special hunt triggered by most cursed possessions.",
+        "rules": [
+          "Ignores sanity thresholds and cooldowns.",
+          "Grace period drops to 1 second.",
+          "Hunt duration increases by 20 seconds for every subsequent cursed hunt in the contract.",
+          "Cannot be prevented by Smudge Sticks."
+        ],
+        "counters": ["Tier III Crucifix with both charges intact.", "Exiting the building before triggering (cancels the hunt, but the 20s duration penalty still applies)."]
+      }
+    },
+    "Monkey Paw": {
+      "effect": "Grants wishes via voice chat. Number of wishes depends on difficulty.",
+      "wishes": {
+        "I wish to see the ghost": { "effect": "Triggers a full manifestation event in the ghost's current room.", "penalty": "Cursed hunt after 5 seconds." },
+        "I wish for activity": { "effect": "Doubles all ghost activity for 2 minutes.", "penalty": "None directly, but increased activity raises hunt risk." },
+        "I wish to be sane": { "effect": "Sets all players' sanity to 50%.", "penalty": "Passive sanity drain increases by 1.5x for the rest of the contract." },
+        "I wish to be safe": { "effect": "Unlocks the nearest locked hiding spot.", "penalty": "None." },
+        "I wish to leave": { "effect": "Unlocks the exit door.", "penalty": "Player's movement speed is reduced for the rest of the contract." },
+        "I wish to revive my friend": { "effect": "Revives a dead player.", "penalty": "The wisher has a 50% chance of dying." },
+        "I wish for knowledge": { "effect": "Reveals the ghost's type in the journal.", "penalty": "Ghost's hunt sanity threshold is lowered for the rest of the contract." }
+      },
+      "strategyNotes": "'I wish to be safe' is a low-risk wish that can create an escape route. Avoid 'I wish to see the ghost' unless you are prepared for an immediate cursed hunt."
+    },
+    "Voodoo Doll": {
+      "effect": "Has 10 pins. Each interaction pushes in one pin and forces the ghost to interact with the environment.",
+      "sanityCost": "5% per normal pin; 10% for the heart pin.",
+      "cursedHuntTrigger": "Pushing the heart pin triggers a cursed hunt. Also triggers if used at 0% sanity.",
+      "strategyNotes": "Forced interactions can produce EMF Level 5 and Ultraviolet evidence. Excellent for identifying shy ghosts like the Shade."
+    },
+    "Ouija Board": {
+      "effect": "Allows direct communication with the ghost. The planchette spells out answers.",
+      "sanityCost": {
+        "Where are you?": "20%",
+        "Where is the bone?": "20%",
+        "Are you close?": "20%",
+        "How old are you?": "5%",
+        "How did you die?": "5%",
+        "What is my sanity?": "5%",
+        "Am I insane?": "5%"
+      },
+      "cursedHuntTrigger": "Saying 'Hide and Seek' guarantees a countdown to a hunt. Leaving the board active and moving more than 5m away causes it to burn and trigger a cursed hunt. Asking a question that costs more sanity than you have triggers a cursed hunt.",
+      "strategyNotes": "Always say 'Goodbye' to deactivate safely. Each answer has a 33% chance of producing EMF Level 5 if the ghost has that evidence."
+    },
+    "Music Box": {
+      "effect": "Plays music. If the ghost is within 20m, it sings, revealing its location. Within 5m, triggers a ghost event where the ghost walks toward the box.",
+      "sanityCost": "2.6% per second within 3m of the active box (up to 77% over the full 30-second melody).",
+      "cursedHuntTrigger": "Dropping (not placing) the box while music plays; ghost comes within 1m of the box; ghost walks for more than 5 seconds during the event; using at 0% sanity.",
+      "strategyNotes": "The Spirit can teleport onto the person carrying an active Music Box. Have a plan to drop it and run."
+    },
+    "Haunted Mirror": {
+      "effect": "Shows a live view of the ghost's favorite room, including lights and equipment.",
+      "sanityCost": "7.5% per second, with a minimum of 20% per activation.",
+      "cursedHuntTrigger": "Using it below 20% sanity, or if sanity reaches 0% while looking into it (the mirror shatters).",
+      "strategyNotes": "Extremely useful on maps with similar-looking rooms (e.g., Brownstone High School). Place equipment in a suspected room and check for it in the reflection."
+    },
+    "Tarot Cards": {
+      "effect": "A deck of 10 cards drawn randomly from 10 types.",
+      "cardTypes": {
+        "The Tower": { "effect": "Doubles paranormal activity for 20s.", "chance": "20%" },
+        "The Wheel of Fortune": { "effect": "+25% or −25% sanity (50/50).", "chance": "20%" },
+        "The Fool": { "effect": "Mimics another card at random (100% during a hunt).", "chance": "17%" },
+        "The Devil": { "effect": "Triggers a paranormal event toward the nearest player.", "chance": "10%" },
+        "Death": { "effect": "Immediate cursed hunt.", "chance": "10%" },
+        "The Hermit": { "effect": "Sends the ghost back to its favorite room for 1 minute.", "chance": "10%" },
+        "The Sun": { "effect": "Sanity set to 100%.", "chance": "5%" },
+        "The Moon": { "effect": "Sanity set to 0%.", "chance": "5%" },
+        "The High Priestess": { "effect": "Revives a dead player (or the next one to die).", "chance": "2%" },
+        "The Hanged Man": { "effect": "Instantly kills the one who drew it.", "chance": "1%" }
+      },
+      "cursedHuntTrigger": "The Death card triggers a cursed hunt. Drawing during a hunt always yields The Fool.",
+      "strategyNotes": "About 34.9% of decks contain no Death card at all—the only cursed possession that can trigger no hunt whatsoever. Once all 10 cards are drawn, every subsequent hunt still gains 20 seconds."
+    },
+    "Summoning Circle": {
+      "effect": "Lighting all five candles summons the ghost and triggers a cursed hunt.",
+      "cursedHuntTrigger": "Lighting all five candles always triggers a cursed hunt.",
+      "strategyNotes": "One of the most direct and dangerous cursed possessions. Use Sanity Pills before lighting the final candle to ensure you have enough sanity to escape."
+    }
+  }
+}

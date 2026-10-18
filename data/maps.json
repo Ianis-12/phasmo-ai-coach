@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "game": "Phasmophobia",
+    "version": "2026 Season",
+    "lastUpdated": "2026-10-18",
+    "mapCount": 14
+  },
+  "maps": {
+    "6 Tanglewood Drive": {
+      "size": "Small",
+      "rooms": 12,
+      "floors": 2,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Garage (on the back wall)",
+        "Basement (on the wall near the stairs)"
+      ],
+      "exitDoorLocations": [
+        "Front Door (Foyer)"
+      ],
+      "hidingSpots": [
+        "Foyer, closet in the hallway next to Nancy's room",
+        "Foyer, closet next to living room",
+        "Hobby Room, closet",
+        "Ensuite, closet",
+        "Garage, lockers",
+        "Basement, behind blue tool cart under the stairs"
+      ],
+      "loopingSpots": [
+        { "location": "Kitchen", "obstacle": "Long dining table", "difficulty": "Easy" },
+        { "location": "Garage", "obstacle": "Car", "difficulty": "Medium" },
+        { "location": "Living Room", "obstacle": "Coffee table", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "The car in the garage",
+        "The kitchen island/table",
+        "The train table in the Hobby Room"
+      ],
+      "notes": "Reworked in v0.16.0.0 (March 2026). Garage and basement provide strong evasion options for a small map."
+    },
+    "13 Willow Street": {
+      "size": "Small",
+      "rooms": 10,
+      "floors": 2,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Gym (on the wall immediately to the right of the door)",
+        "Basement (on the brick wall, take a right from the stairs)"
+      ],
+      "exitDoorLocations": [
+        "Front Door (Living Room)"
+      ],
+      "hidingSpots": [
+        "Behind the portrait in the corner of the Art Studio",
+        "Behind the sliding wooden panel in the Living Room",
+        "Underneath the stairs in the Basement",
+        "Behind the black plastic boxes in the Basement",
+        "Inside the closet in the Master Bedroom"
+      ],
+      "loopingSpots": [
+        { "location": "Kitchen", "obstacle": "Kitchen table", "difficulty": "Easy" },
+        { "location": "Living Room", "obstacle": "Couch", "difficulty": "Risky" },
+        { "location": "Basement", "obstacle": "Coffee table", "difficulty": "Risky" }
+      ],
+      "lineOfSightBlockers": [
+        "The kitchen island",
+        "The couch in the living room",
+        "The wooden screen in the living room"
+      ],
+      "notes": "Reworked in v0.18.0.0 (July 21, 2026). The kitchen island is a famous looping spot. The pantry is not a valid hiding spot."
+    },
+    "Point Hope": {
+      "size": "Medium",
+      "rooms": 16,
+      "floors": 10,
+      "xp": { "ghostIdentification": 150, "boneEvidence": 35 },
+      "breakerLocations": [
+        "Walls between staircases on each floor",
+        "Behind the door to the main room on the ground floor"
+      ],
+      "exitDoorLocations": [
+        "Ground Floor Entry Hallway"
+      ],
+      "hidingSpots": [
+        "Entry Bathroom, in the shower",
+        "Entry Hallway, closet near the exit door",
+        "Living Room, small lighthouse tent",
+        "Living Room, closet near the living room entrance",
+        "Living Room, behind the opened crate below the stairs",
+        "Kitchen, behind the cardboard next to the washer",
+        "Dining Room, behind the boxes below the stairs",
+        "Master Bedroom, behind the room divider",
+        "Child Bedroom, cupboard",
+        "Maintenance Room, lockers",
+        "Lantern Room Bottom, behind the boxes near the stairs"
+      ],
+      "loopingSpots": [
+        { "location": "Balcony (Top Floor)", "obstacle": "Circular room layout", "difficulty": "Medium" },
+        { "location": "Spiral Staircases", "obstacle": "Circular stairwell", "difficulty": "High Risk" }
+      ],
+      "lineOfSightBlockers": [
+        "The spiral staircase walls",
+        "Room dividers in the Master Bedroom",
+        "The lighthouse tent in the Living Room"
+      ],
+      "notes": "Ten-story lighthouse. Extremely linear; there is only one path between areas. The Balcony has two doors, but the one with a sea view has a shorter path to the stairwell."
+    },
+    "Brownstone High School": {
+      "size": "Large",
+      "rooms": 64,
+      "floors": 2,
+      "xp": { "ghostIdentification": 200, "boneEvidence": 50 },
+      "breakerLocations": [
+        "Under the Right Staircase (if right entrance is open)",
+        "Under the Left Staircase (if main or left entrance is accessible)"
+      ],
+      "exitDoorLocations": [
+        "Main Entrance (Front)",
+        "Left Side Entrance",
+        "Right Side Entrance",
+        "Back exits leading to the basketball court"
+      ],
+      "hidingSpots": [
+        "Classroom closets",
+        "Bathroom stalls",
+        "Janitor closets"
+      ],
+      "loopingSpots": [
+        { "location": "Main Hallway", "obstacle": "Long corridor loops", "difficulty": "Easy" },
+        { "location": "Cafeteria", "obstacle": "Tables", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "Classroom walls",
+        "Locker banks",
+        "The central staircase structure"
+      ],
+      "notes": "Only 58 rooms are possible ghost rooms. The Restricted variant has four subsection layouts. Internal doors lock and close during hunts."
+    },
+    "Nell's Diner": {
+      "size": "Small",
+      "rooms": 14,
+      "floors": 1,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Dining Room (on the wall to the right behind the counter)",
+        "Side Door (immediately accessible through the right-side side door)",
+        "Storage Room (opposite the staff bathroom)"
+      ],
+      "exitDoorLocations": [
+        "Main Entrance (Dining Room)",
+        "Side Door (Right side of the building)"
+      ],
+      "hidingSpots": [
+        "Break Room lockers (full concealment)",
+        "Behind blue vending machine in Hallway",
+        "Food carts in Storage Room and Cooler Room"
+      ],
+      "loopingSpots": [
+        { "location": "Dining Area", "obstacle": "Tables", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "The counter in the dining room",
+        "Vending machines in the hallway"
+      ],
+      "notes": "Single-floor diner. Break Room lockers are among the safest hiding spots on any small map."
+    }
+  }
+}
