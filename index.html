@@ -93,6 +93,13 @@
                         <label><input type="checkbox" onchange="toggleAnomaly('chaseEvent', this.checked)"> Chasing Ghost Event</label>
                     </div>
                 </div>
+                <div class="panel shadow-box" style="border-color: var(--warning); margin-top: 20px;">
+                    <h2 style="color: var(--warning);">🧪 Active Behavioral Tests</h2>
+                    <p style="font-size: 12px; color: #aaa; margin-bottom: 10px;">Dynamic tests based on current suspects.</p>
+                    <div id="behavioral-tests">
+                        <!-- Populated by JS when ghosts are narrowed down -->
+                    </div>
+                </div>
             </section>
 
             <!-- RIGHT COLUMN: INTEL, SURVIVAL & LOADOUT -->
