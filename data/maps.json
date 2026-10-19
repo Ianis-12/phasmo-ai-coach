@@ -38,6 +38,68 @@
       ],
       "notes": "Reworked in v0.16.0.0 (March 2026). Garage and basement provide strong evasion options for a small map."
     },
+    "42 Edgefield Road": {
+      "size": "Small",
+      "rooms": 16,
+      "floors": 2,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Garage (on the wall near the door)",
+        "Basement (on the wall)"
+      ],
+      "exitDoorLocations": [
+        "Front Door (Foyer)"
+      ],
+      "hidingSpots": [
+        "Utility, back corner between shelves and washer (crouch against the washer)",
+        "Garage, lockers against far wall",
+        "Basement, lockers next to refrigerator",
+        "Small Blue Bedroom, closet at back",
+        "Upstairs Hallway, 2 closets across from green bedroom",
+        "Large Blue Bedroom, closet at back corner",
+        "Master Bedroom, 2 closets across from bed"
+      ],
+      "loopingSpots": [
+        { "location": "Living Room", "obstacle": "Couch", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "Living room bookshelf",
+        "Hallway cupboard",
+        "Basement storage shelves"
+      ],
+      "notes": "9 sanctioned hiding spots. Three-floor layout with basement. Looping is only possible around the living room couch, but it does not block line-of-sight well."
+    },
+    "10 Ridgeview Court": {
+      "size": "Small",
+      "rooms": 16,
+      "floors": 3,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Garage (on the wall)",
+        "Basement (upper right corner)",
+        "Basement (lower right corner)"
+      ],
+      "exitDoorLocations": [
+        "Front Door (Foyer)"
+      ],
+      "hidingSpots": [
+        "Living Room, behind stacked storage crates in corner by fireplace",
+        "Garage, lockers near entrance door",
+        "Garage, lockers along far wall",
+        "Basement, lockers directly across from door",
+        "Basement, behind stacked boxes in corner after turning left twice from the door"
+      ],
+      "loopingSpots": [
+        { "location": "Hallway", "obstacle": "Piano", "difficulty": "Medium" },
+        { "location": "Kitchen", "obstacle": "Fridge", "difficulty": "Hard" }
+      ],
+      "lineOfSightBlockers": [
+        "Fridge in the kitchen",
+        "Piano in the hallway",
+        "Computer desk in the hallway"
+      ],
+      "notes": "10 sanctioned hiding spots. Three-story small map. The fridge and piano are excellent unofficial hiding spots that are rarely blocked."
+    },
     "13 Willow Street": {
       "size": "Small",
       "rooms": 10,
@@ -68,6 +130,97 @@
         "The wooden screen in the living room"
       ],
       "notes": "Reworked in v0.18.0.0 (July 21, 2026). The kitchen island is a famous looping spot. The pantry is not a valid hiding spot."
+    },
+    "Grafton Farmhouse": {
+      "size": "Small",
+      "rooms": 14,
+      "floors": 3,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Utility Room (on the wall)",
+        "Hallway to the attic stairwell (on the wall)"
+      ],
+      "exitDoorLocations": [
+        "Front Door (Foyer)"
+      ],
+      "hidingSpots": [
+        "Foyer, behind shelves under the stairs (only when there are two shelves)",
+        "Workshop, behind an upright mattress",
+        "Utility, behind a shelf (when cardboard boxes are present)",
+        "Master Bedroom, behind cardboard boxes in the back corner of the walk-in closet",
+        "Twin Bedroom, behind cardboard boxes on the left side of the walk-in closet",
+        "Nursery, behind the crib (when it's not against the wall)",
+        "Upstairs Hallway, behind the chair (when it's not against the window)",
+        "Upstairs Bedroom, behind a room divider",
+        "Storage, inside the lockers"
+      ],
+      "loopingSpots": [
+        { "location": "Kitchen", "obstacle": "Island", "difficulty": "Easy" },
+        { "location": "Dining Room", "obstacle": "Dining table", "difficulty": "Medium" },
+        { "location": "Living Room", "obstacle": "Couch", "difficulty": "Hard" }
+      ],
+      "lineOfSightBlockers": [
+        "Kitchen island",
+        "Living room couch",
+        "Dining table"
+      ],
+      "notes": "9 sanctioned hiding spots. Three-floor farmhouse. Watch out for the knocked chair in the dining room, which can interrupt your looping."
+    },
+    "Camp Woodwind": {
+      "size": "Small",
+      "rooms": 11,
+      "floors": 1,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Only one location (generator near the main entrance)"
+      ],
+      "exitDoorLocations": [
+        "Main Gate"
+      ],
+      "hidingSpots": [
+        "Campfire, behind several barrels next to the Games Tent",
+        "Campfire, behind several coolers next to the Blue Tent",
+        "Picnic Area, behind coolers next to the White Tent",
+        "Yellow Tent, behind several sleeping bags on the right side",
+        "Kids' Area, two small tents (orange and cyan)",
+        "Food Tent, behind a table with multiple coolers on it"
+      ],
+      "loopingSpots": [
+        { "location": "Central Path", "obstacle": "Main Tent", "difficulty": "Hard" }
+      ],
+      "lineOfSightBlockers": [
+        "The main tent",
+        "Trees and barrels"
+      ],
+      "notes": "Single-floor outdoor map. The campfire has a single exit, so be careful not to get cornered during a hunt."
+    },
+    "Nell's Diner": {
+      "size": "Small",
+      "rooms": 14,
+      "floors": 1,
+      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+      "breakerLocations": [
+        "Dining Room (on the wall to the right behind the counter)",
+        "Side Door (immediately accessible through the right-side side door)",
+        "Storage Room (opposite the staff bathroom)"
+      ],
+      "exitDoorLocations": [
+        "Main Entrance (Dining Room)",
+        "Side Door (Right side of the building)"
+      ],
+      "hidingSpots": [
+        "Break Room lockers (full concealment)",
+        "Behind blue vending machine in Hallway",
+        "Food carts in Storage Room and Cooler Room"
+      ],
+      "loopingSpots": [
+        { "location": "Dining Area", "obstacle": "Tables", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "The counter in the dining room",
+        "Vending machines in the hallway"
+      ],
+      "notes": "Single-floor diner. Break Room lockers are among the safest hiding spots on any small map."
     },
     "Point Hope": {
       "size": "Medium",
@@ -105,6 +258,121 @@
       ],
       "notes": "Ten-story lighthouse. Extremely linear; there is only one path between areas. The Balcony has two doors, but the one with a sea view has a shorter path to the stairwell."
     },
+    "Bleasdale Farmhouse": {
+      "size": "Medium",
+      "rooms": 21,
+      "floors": 3,
+      "xp": { "ghostIdentification": 150, "boneEvidence": 35 },
+      "breakerLocations": [
+        "Utility Room (ground floor)",
+        "Back garden door (ground floor)",
+        "Stairwell leading to the attic (ground floor)"
+      ],
+      "exitDoorLocations": [
+        "Front Door (Foyer)"
+      ],
+      "hidingSpots": [
+        "Foyer, closet under the stairs",
+        "Utility Room, behind cardboard boxes opposite one of the possible fuse box locations",
+        "Side Path, garden shed",
+        "Garden, behind a grid between the two arches",
+        "Upstairs Hallway, behind the chair (not the couch)",
+        "Master Bedroom, cupboards",
+        "Study, closet",
+        "Attic Space, behind shelves",
+        "Attic Bedroom, cupboard"
+      ],
+      "loopingSpots": [
+        { "location": "Trophy Room", "obstacle": "Display cases", "difficulty": "Medium" },
+        { "location": "Dining Room", "obstacle": "Table", "difficulty": "Medium" },
+        { "location": "Living Room", "obstacle": "Couches", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "Display cases in Trophy Room",
+        "Dining table",
+        "Living room couches"
+      ],
+      "notes": "9 sanctioned hiding spots. Medium farmhouse with attic. Motion-triggered outdoor lights count towards the light limit, so be careful when turning them on."
+    },
+    "Sunny Meadows (Restricted)": {
+      "size": "Medium",
+      "rooms": 17,
+      "floors": 1,
+      "xp": { "ghostIdentification": 150, "boneEvidence": 35 },
+      "breakerLocations": [
+        "Varies by wing (often near entrance or security rooms)"
+      ],
+      "exitDoorLocations": [
+        "Main Entrance"
+      ],
+      "hidingSpots": [
+        "Entrance area and one randomly selected wing"
+      ],
+      "loopingSpots": [
+        { "location": "Chapel / corridor loops", "obstacle": "Walls and doors", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "Walls within the selected wing"
+      ],
+      "notes": "Randomized variant of Sunny Meadows. Only the entrance area (including Chapel) and one randomly selected wing are accessible; other wings are blocked. All cursed possessions spawn in the Chapel."
+    },
+    "Prison": {
+      "size": "Medium",
+      "rooms": 31,
+      "floors": 2,
+      "xp": { "ghostIdentification": 150, "boneEvidence": 35 },
+      "breakerLocations": [
+        "Visitation Security Room (ground floor)",
+        "A Block Security Room (ground floor)",
+        "Warden's Office (second floor)"
+      ],
+      "exitDoorLocations": [
+        "Main Entrance"
+      ],
+      "hidingSpots": [
+        "Entrance, lockers at the far back of the room",
+        "Cafeteria, behind multiple garbage cans on the left (only if there are 4 garbage cans)",
+        "Cafeteria Security, on the balcony area",
+        "Various cell blocks (lockers, bookcases, flipped over beds)"
+      ],
+      "loopingSpots": [
+        { "location": "Cell Blocks", "obstacle": "Iron bars and walls", "difficulty": "Medium" },
+        { "location": "Main Hallway", "obstacle": "Corridor loops", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "Iron bars in cell blocks",
+        "Walls separating wings"
+      ],
+      "notes": "Only 29 rooms are possible ghost rooms. Iron bars in some areas create unique line-of-sight loops. Internal doors lock and close during hunts."
+    },
+    "Maple Lodge Campsite": {
+      "size": "Medium",
+      "rooms": 28,
+      "floors": 3,
+      "xp": { "ghostIdentification": 150, "boneEvidence": 35 },
+      "breakerLocations": [
+        "Generator (location varies; check the Site Map)"
+      ],
+      "exitDoorLocations": [
+        "Main Entrance"
+      ],
+      "hidingSpots": [
+        "Entrance, behind dividers near door to Staff Storage Area",
+        "Staff Storage Area, behind boxes on the left of Storage Tent 2",
+        "Staff Storage Area, chemical toilet near Storage Tent 2",
+        "North East Path, behind trees",
+        "Cabins, inside the tents",
+        "Other various tents and sheds"
+      ],
+      "loopingSpots": [
+        { "location": "Central Lodge", "obstacle": "Building", "difficulty": "Medium" }
+      ],
+      "lineOfSightBlockers": [
+        "Cabins and tents",
+        "Trees and fences"
+      ],
+      "notes": "First outdoor map with a Voodoo Doll and Easter eggs. Sprawling campsite with multiple buildings. A generator is used instead of a fuse box."
+    },
     "Brownstone High School": {
       "size": "Large",
       "rooms": 64,
@@ -136,33 +404,34 @@
       ],
       "notes": "Only 58 rooms are possible ghost rooms. The Restricted variant has four subsection layouts. Internal doors lock and close during hunts."
     },
-    "Nell's Diner": {
-      "size": "Small",
-      "rooms": 14,
-      "floors": 1,
-      "xp": { "ghostIdentification": 100, "boneEvidence": 25 },
+    "Sunny Meadows Mental Institution": {
+      "size": "Large",
+      "rooms": 69,
+      "floors": 2,
+      "xp": { "ghostIdentification": 200, "boneEvidence": 50 },
       "breakerLocations": [
-        "Dining Room (on the wall to the right behind the counter)",
-        "Side Door (immediately accessible through the right-side side door)",
-        "Storage Room (opposite the staff bathroom)"
+        "Manager's Office (behind cupboard)",
+        "Infirmary (lockers)",
+        "Utility Room (behind racks, only when cardboard boxes are present)"
       ],
       "exitDoorLocations": [
-        "Main Entrance (Dining Room)",
-        "Side Door (Right side of the building)"
+        "Main Entrance"
       ],
       "hidingSpots": [
-        "Break Room lockers (full concealment)",
-        "Behind blue vending machine in Hallway",
-        "Food carts in Storage Room and Cooler Room"
+        "Manager's Office, behind a cupboard",
+        "Infirmary, lockers",
+        "Utility Room, behind the racks at the far end (only when cardboard boxes are present)",
+        "Various patient rooms, bathrooms, and chapel (28 sanctioned spots)"
       ],
       "loopingSpots": [
-        { "location": "Dining Area", "obstacle": "Tables", "difficulty": "Medium" }
+        { "location": "Long Corridors", "obstacle": "Walls and doors", "difficulty": "Medium" },
+        { "location": "Wing Intersections", "obstacle": "Corners", "difficulty": "Medium" }
       ],
       "lineOfSightBlockers": [
-        "The counter in the dining room",
-        "Vending machines in the hallway"
+        "Walls between wings",
+        "Chapel architecture"
       ],
-      "notes": "Single-floor diner. Break Room lockers are among the safest hiding spots on any small map."
+      "notes": "Largest and most difficult map. All seven cursed possessions spawn in the Chapel. The Monkey Paw is at the base of the large crucifix. Wings lock down during hunts."
     }
   }
 }

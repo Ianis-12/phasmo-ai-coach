@@ -8,21 +8,16 @@
     --danger: #ff4c4c;
     --success: #4caf50;
     --warning: #ffb300;
-    --border-color: #45a29e;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    min-height: 100vh;
+    /* Natural scrolling. No hidden overflows to break the page. */
 }
 
 .hidden { display: none !important; }
@@ -32,95 +27,169 @@ body {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.85);
     display: flex; justify-content: center; align-items: center;
-    z-index: 1000; backdrop-filter: blur(5px);
+    z-index: 1000; backdrop-filter: blur(5px); padding: 20px;
 }
 .modal-content {
-    background: var(--panel-bg); padding: 40px; border-radius: 12px;
-    border: 1px solid var(--accent-dark); width: 450px;
+    background: var(--panel-bg); padding: 30px; border-radius: 12px;
+    border: 1px solid var(--accent-dark); width: 100%; max-width: 450px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-.modal-content h2 { margin-top: 0; color: var(--accent); text-align: center; font-size: 28px; margin-bottom: 25px; }
-.form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
-.form-group label { margin-bottom: 8px; font-size: 14px; color: #aaa; font-weight: bold; }
+.modal-content h2 { color: var(--accent); text-align: center; margin-bottom: 20px; }
+.form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+.form-group label { margin-bottom: 5px; font-size: 14px; color: #aaa; }
 .form-group input, .form-group select {
-    padding: 12px; background: var(--panel-bg-darker); color: white;
-    border: 1px solid #333; border-radius: 6px; font-size: 16px;
-    transition: border 0.2s;
+    padding: 10px; background: var(--panel-bg-darker); color: white;
+    border: 1px solid #333; border-radius: 6px; font-size: 15px;
 }
-.form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent); }
-
 .primary-btn {
-    width: 100%; padding: 15px; background: var(--accent); color: black;
-    border: none; border-radius: 6px; font-weight: bold; font-size: 18px;
-    cursor: pointer; transition: 0.2s; text-transform: uppercase; letter-spacing: 1px;
+    width: 100%; padding: 12px; background: var(--accent); color: black;
+    border: none; border-radius: 6px; font-weight: bold; font-size: 16px;
+    cursor: pointer; transition: 0.2s; text-transform: uppercase;
 }
-.primary-btn:hover { background: var(--accent-dark); }
 
 /* --- HEADER --- */
 header {
     background-color: var(--panel-bg-darker);
-    padding: 15px 30px;
+    padding: 15px 20px;
     border-bottom: 2px solid var(--accent-dark);
     display: flex; justify-content: space-between; align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 10;
+    flex-wrap: wrap; gap: 10px;
 }
-header h1 { margin: 0; color: var(--accent); font-size: 24px; letter-spacing: 1px; }
-.header-info { font-size: 16px; font-weight: bold; color: #fff; background: #000; padding: 8px 20px; border-radius: 20px; border: 1px solid var(--accent-dark); }
+header h1 { color: var(--accent); font-size: 20px; }
+.header-info { 
+    font-size: 14px; font-weight: bold; color: #fff; 
+    background: #000; padding: 6px 15px; border-radius: 20px; 
+    border: 1px solid var(--accent-dark); text-align: center;
+}
+.danger-btn { background: var(--danger); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; padding: 8px 15px;}
 
-.danger-btn { background: var(--danger); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; }
-.danger-btn:hover { background: #cc0000; }
-
-/* --- DASHBOARD GRID --- */
+/* --- THE FLUID DASHBOARD --- */
 .dashboard {
-    display: grid; grid-template-columns: 350px 1fr 350px;
-    gap: 20px; padding: 20px; height: calc(100vh - 70px);
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap; /* This is the magic. It wraps columns if they don't fit */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto; /* Centers the dashboard on ultra-wide screens */
+    align-items: flex-start; /* Stops panels from stretching to match heights */
 }
 
-.column { display: flex; flex-direction: column; gap: 20px; height: 100%; overflow: hidden; }
+/* 
+  Flex basis setup:
+  Left column tries to be 300px.
+  Middle column tries to be 500px (and grows to fill space).
+  Right column tries to be 300px.
+*/
+.left-col { flex: 1 1 300px; display: flex; flex-direction: column; gap: 20px; }
+.middle-col { flex: 2 1 500px; display: flex; flex-direction: column; gap: 20px; }
+.right-col { flex: 1 1 300px; display: flex; flex-direction: column; gap: 20px; }
 
-/* --- PANELS & SHADOW BOXES --- */
+/* --- PANELS --- */
 .panel {
     background: var(--panel-bg); border-radius: 10px; padding: 20px;
     border: 1px solid #333;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
-.shadow-box { box-shadow: 0 8px 20px rgba(0,0,0,0.6); }
-.panel h2 { font-size: 18px; color: var(--accent); margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+.panel h2 { font-size: 16px; color: var(--accent); margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-/* --- LEFT COL: JOURNAL --- */
-.evidence-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+/* --- LEFT: JOURNAL --- */
+.evidence-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;}
 .evidence-btn {
-    padding: 12px; background: var(--panel-bg-darker); color: white;
+    padding: 10px; background: var(--panel-bg-darker); color: white;
     border: 1px solid #333; border-radius: 6px; cursor: pointer;
     text-align: left; font-size: 14px; transition: 0.2s;
 }
-.evidence-btn:hover { border-color: var(--accent); }
 .evidence-btn.active { background: var(--accent); color: black; font-weight: bold; border-color: var(--accent); }
 
-.ghost-list { display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
-.ghost-card { background: var(--panel-bg-darker); padding: 12px; border-radius: 6px; border-left: 4px solid var(--accent); }
-.ghost-card h3 { margin: 0 0 5px 0; color: #fff; font-size: 16px; }
-.ghost-card p { margin: 0; font-size: 12px; color: #aaa; }
+/* Removed inner scrolling. It will just expand the page if there are many ghosts. */
+.ghost-list { display: flex; flex-direction: column; gap: 10px; }
+.ghost-card { background: var(--panel-bg-darker); padding: 10px; border-radius: 6px; border-left: 4px solid var(--accent); }
+.ghost-card h3 { color: #fff; font-size: 15px; margin-bottom: 5px; }
+.ghost-card p { font-size: 12px; color: #aaa; }
 
-/* --- MIDDLE COL: COACH FEED --- */
+/* --- MIDDLE: COACH --- */
 .coach-feed {
-    flex: 1; background: #000; border: 1px solid #333; border-radius: 8px;
-    padding: 20px; font-family: 'Courier New', Courier, monospace; line-height: 1.6;
-    overflow-y: auto; margin-bottom: 15px;
+    background: #000; border: 1px solid #333; border-radius: 8px;
+    padding: 15px; font-family: 'Courier New', Courier, monospace; line-height: 1.6;
+    font-size: 14px; min-height: 250px; /* Gives it a solid starting size */
 }
 .coach-msg { margin-bottom: 15px; padding: 10px; border-left: 4px solid var(--accent); background: #111; }
 .coach-msg.danger { border-left-color: var(--danger); color: #ff9999; }
 .coach-msg.warning { border-left-color: var(--warning); color: #ffd54f; }
 .coach-msg.tip { border-left-color: var(--success); color: #81c784; }
 
-.checklist-area { background: var(--panel-bg-darker); padding: 15px; border-radius: 8px; border: 1px solid #333; }
-.checklist-area h3 { margin: 0 0 10px 0; font-size: 14px; color: #aaa; }
-.checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.checklist-area { background: var(--panel-bg-darker); padding: 15px; border-radius: 8px; border: 1px solid #333; margin-top: 15px; }
+.checklist-area h3 { font-size: 14px; color: #aaa; margin-bottom: 10px; }
+.checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
 .checkbox-grid label { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; color: white; }
-.checkbox-grid input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
+.checkbox-grid input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
 
-/* --- RIGHT COL: INTEL --- */
+/* --- RIGHT: INTEL --- */
 .obj-select { width: 100%; padding: 10px; margin-bottom: 10px; background: var(--panel-bg-darker); color: white; border: 1px solid #333; border-radius: 6px; font-size: 14px; }
-.loadout-tips { font-size: 14px; line-height: 1.5; color: #ddd; }
-.loadout-tips ul { padding-left: 20px; margin: 10px 0; }
-.loadout-tips li { margin-bottom: 5px; }
+.loadout-tips { font-size: 14px; line-height: 1.6; color: #ddd; }
+.loadout-tips ul { padding-left: 20px; margin-top: 10px; }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* If the screen is smaller than ~900px, the right column drops down. */
+@media (max-width: 950px) {
+    .middle-col { flex: 1 1 100%; order: 1; } /* Coach goes to the top */
+    .left-col { flex: 1 1 45%; order: 2; }
+    .right-col { flex: 1 1 45%; order: 3; }
+}
+
+/* Mobile View (Portrait phones) */
+@media (max-width: 600px) {
+    .left-col, .middle-col, .right-col { flex: 1 1 100%; }
+    header { flex-direction: column; text-align: center; }
+}
+/* --- AI CHAT COLORS --- */
+.sys-main { 
+    color: #81c784; /* Green */
+    margin-bottom: 12px; 
+    line-height: 1.5;
+}
+.sys-tip { 
+    color: #64b5f6; /* Blue */
+    margin-bottom: 12px; 
+    line-height: 1.5;
+}
+.sys-action { 
+    margin-top: 15px; 
+    padding: 12px; 
+    border: 1px dashed #81c784; 
+    color: #81c784; /* Green */
+    background: rgba(129, 199, 132, 0.05);
+    border-radius: 6px;
+}
+.sys-action label {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 8px; 
+    cursor: pointer;
+}
+.sys-action input[type="checkbox"] {
+    width: 18px; 
+    height: 18px; 
+    accent-color: #81c784;
+}
+/* --- AI CHAT & STAGE COLORS --- */
+.sys-main { color: #81c784; margin-bottom: 12px; line-height: 1.5; }
+.sys-tip { color: #64b5f6; margin-bottom: 12px; line-height: 1.5; font-size: 13.5px; }
+.sys-action { margin-top: 15px; padding: 12px; border: 1px dashed #81c784; background: rgba(129, 199, 132, 0.05); border-radius: 6px; }
+.sys-action label { display: flex; align-items: center; gap: 10px; margin-top: 8px; cursor: pointer; color: #fff; }
+.sys-action input[type="checkbox"] { width: 18px; height: 18px; accent-color: #81c784; }
+
+.stage-btn { background: var(--accent); color: #000; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 15px; width: 100%; transition: 0.2s;}
+.stage-btn:hover { background: #fff; }
+
+/* --- MASTER CHECKLIST & ANOMALIES --- */
+.anomaly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px;}
+.anomaly-btn { background: var(--panel-bg-darker); border: 1px solid #333; color: #ccc; padding: 8px; border-radius: 4px; cursor: pointer; text-align: left; }
+.anomaly-btn.active { background: #3f51b5; border-color: #7986cb; color: #fff; }
+
+/* --- HUNT PROTOCOLS --- */
+.hunt-tips-box { background: rgba(255, 76, 76, 0.05); padding: 10px; font-size: 13.5px; line-height: 1.5; color: #e0e0e0; }
+.hunt-tips-box ul { padding-left: 20px; margin-top: 8px; }
+.hunt-tips-box li { margin-bottom: 6px; }
